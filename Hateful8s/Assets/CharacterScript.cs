@@ -1,12 +1,25 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+public enum Player{
+	none,
+	Player1,
+	Player2
+}
+[System.Serializable]
+public class PlayerControls{
+	public Player player=Player.none;
+	public string moveLeft="left";
+	public string moveRight="right";
+	public string jump="space";
+	public string attack="g";
+}
 public class CharacterScript : MonoBehaviour {
 	public int hp=100;
 	public float jumpForce=5f;
 	public float forwardSpeed=1000f;
 	public float backwardSpeed=4f;
+	public Player player=Player.none;
 	//Way character is facing
 	public bool isRight=true;
 	public Text health;
@@ -32,17 +45,17 @@ public class CharacterScript : MonoBehaviour {
 		health.text = "HP: " + hp;
 		if (onGround) {
 			//rBody.velocity = Vector2.zero;
-			if (!Input.GetKey ("left") && !Input.GetKey ("right")) {
+			if (!Input.GetKey (ManagerSettings.getControls(player).moveLeft) && !Input.GetKey (ManagerSettings.getControls(player).moveRight)) {
 
 				rBody.velocity = Vector2.zero;
 			}
-			else if (Input.GetKeyDown ("left")) {
+			else if (Input.GetKeyDown (ManagerSettings.getControls(player).moveLeft)) {
 				moveLeft ();
-			} else if (Input.GetKeyDown ("right")) {
+			} else if (Input.GetKeyDown (ManagerSettings.getControls(player).moveRight)) {
 				moveRight ();
 
 			}
-			if(Input.GetKeyDown("space")){
+			if(Input.GetKeyDown(ManagerSettings.getControls(player).jump)){
 				jump ();
 			}
 
@@ -92,7 +105,6 @@ public class CharacterScript : MonoBehaviour {
 		
 	}
 	void flip(){
-		print ("flipped");
 		isRight = !isRight;
 		Vector3 scale = transform.localScale;
 		scale.x *= -1;
