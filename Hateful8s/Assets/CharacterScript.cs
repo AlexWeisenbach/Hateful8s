@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 public enum Player{
 	none,
@@ -21,6 +22,7 @@ public class CharacterScript : MonoBehaviour {
 	public Player player=Player.none;
 	//Way character is facing
 	public bool isRight=true;
+	public Text health;
 
 	GameObject target;
 	bool onGround; 
@@ -40,6 +42,7 @@ public class CharacterScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		health.text = "HP: " + hp;
 		if (onGround) {
 			//rBody.velocity = Vector2.zero;
 			if (!Input.GetKey (ManagerSettings.getControls(player).moveLeft) && !Input.GetKey (ManagerSettings.getControls(player).moveRight)) {
