@@ -22,6 +22,8 @@ public class ManagerSettings : MonoBehaviour {
 				break;
 			}
 		}
+		if (Input.GetKeyDown(KeyCode.Escape))
+			Application.Quit();
 	}
 	public static PlayerControls getControls(Player player){
 		if (dic.ContainsKey (player)) {
