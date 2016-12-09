@@ -16,7 +16,7 @@ public class StartButton : MonoBehaviour {
 			Application.Quit();
 	}
 
-	void OnMouseDown()
+	public void OnMouseDown()
 	{
 		SceneManager.LoadScene("Jared's Test Scene");
 	}

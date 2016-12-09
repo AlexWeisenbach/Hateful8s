@@ -14,20 +14,32 @@ Platform assembly: C:\Users\morake\Documents\Unity gams\Hateful8s\Hateful8s\Hate
 Loading C:\Users\morake\Documents\Unity gams\Hateful8s\Hateful8s\Hateful8_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\morake\Documents\Unity gams\Hateful8s\Hateful8s\Hateful8_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\morake\Documents\Unity gams\Hateful8s\Hateful8s\Hateful8_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.089 seconds
+- Completed reload, in  0.134 seconds
 Platform assembly: C:\Users\morake\Documents\Unity gams\Hateful8s\Hateful8s\Hateful8_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\morake\Documents\Unity gams\Hateful8s\Hateful8s\Hateful8_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.972544 ms
+UnloadTime: 1.467655 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.299457 ms
+UnloadTime: 4.336991 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 286.
-Total: 0.414420 ms (FindLiveObjects: 0.038321 ms CreateObjectMapping: 0.034370 ms MarkObjects: 0.323555 ms  DeleteObjects: 0.016592 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 288.
+Total: 0.192000 ms (FindLiveObjects: 0.017382 ms CreateObjectMapping: 0.011456 ms MarkObjects: 0.155259 ms  DeleteObjects: 0.007111 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.063507 ms
+
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 160.
+Total: 5.224695 ms (FindLiveObjects: 0.018962 ms CreateObjectMapping: 0.018567 ms MarkObjects: 0.186864 ms  DeleteObjects: 4.999905 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.298271 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 288.
+Total: 0.210173 ms (FindLiveObjects: 0.041086 ms CreateObjectMapping: 0.008296 ms MarkObjects: 0.154864 ms  DeleteObjects: 0.005530 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 15d8 -> priority: 1 
-  Thread -> id: 4a58 -> priority: 1 
+  Thread -> id: 417c -> priority: 1 
+  Thread -> id: 4d94 -> priority: 1 

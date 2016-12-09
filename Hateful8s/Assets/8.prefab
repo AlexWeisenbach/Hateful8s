@@ -363,7 +363,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -422,13 +422,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   jumpForce: 10
-  forwardSpeed: 400
-  backwardSpeed: 300
+  forwardSpeed: 500
+  backwardSpeed: 400
   player: 1
   isRight: 1
   health: {fileID: 0}
   anim: {fileID: 95000012256581330}
   attacking: 0
+  sound: {fileID: 0}
 --- !u!212 &212000010447846184
 SpriteRenderer:
   m_ObjectHideFlags: 1
