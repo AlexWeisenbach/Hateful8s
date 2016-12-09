@@ -62,11 +62,6 @@ public class CharacterScript : MonoBehaviour {
 			if (Input.GetKeyUp (ManagerSettings.getControls (player).attack)) {
 				anim.SetBool ("Punching", false);
 				attacking = false;
-			} else if (Input.GetKeyDown (ManagerSettings.getControls (player).moveLeft)) {
-				moveLeft ();
-			} else if (Input.GetKeyDown (ManagerSettings.getControls (player).moveRight)) {
-				moveRight ();
-
 			}
 			if (Input.GetKeyDown (ManagerSettings.getControls (player).jump)&&!anim.GetBool("Punching")) {
 				anim.SetTrigger ("Jump");	
@@ -87,6 +82,11 @@ public class CharacterScript : MonoBehaviour {
 				attacking = false;
 			}
 		}
+		if (Input.GetKeyDown(ManagerSettings.getControls(player).moveRight)) {
+			moveRight ();
+		} else if (Input.GetKeyDown (ManagerSettings.getControls (player).moveLeft)) {
+			moveLeft ();
+		}
 		if (!isTargetInFront ()) {
 			flip ();
 		}
@@ -96,23 +96,33 @@ public class CharacterScript : MonoBehaviour {
 	void moveLeft(){
 		if (isRight) {
 			anim.SetBool("WalkB", true);
-			rBody.velocity = new Vector2 (-backwardSpeed*Time.deltaTime, 0);
+			if (onGround)
+				rBody.velocity = new Vector2 (-backwardSpeed*Time.deltaTime, 0);
+			else
+				rBody.velocity = new Vector2 (-backwardSpeed*Time.deltaTime*0.25f, 0);
 		} else {
 			anim.SetBool("WalkF", true);
-
-			rBody.velocity = new Vector2 (-forwardSpeed*Time.deltaTime, 0);
+			if (onGround)
+				rBody.velocity = new Vector2 (-forwardSpeed*Time.deltaTime, 0);
+			else
+				rBody.velocity = new Vector2 (-forwardSpeed*Time.deltaTime*0.25f, 0);
 		}
 		anim.SetBool("Neutral", false);
 	}
 	void moveRight(){
 		if (!isRight) {
 			anim.SetBool("WalkB", true);
-			rBody.velocity = new Vector2 (backwardSpeed*Time.deltaTime, 0);
+			if (onGround)
+				rBody.velocity = new Vector2 (backwardSpeed*Time.deltaTime, 0);
+			else
+				rBody.velocity = new Vector2 (backwardSpeed*Time.deltaTime*0.25f, 0);
 		} else {
 			//print ("going right");
 			anim.SetBool("WalkF", true);
-
-			rBody.velocity = new Vector2 (forwardSpeed*Time.deltaTime, 0);
+			if (onGround)
+				rBody.velocity = new Vector2 (forwardSpeed*Time.deltaTime, 0);
+			else
+				rBody.velocity = new Vector2 (forwardSpeed*Time.deltaTime*0.25f, 0);
 		}
 		anim.SetBool("Neutral", false);
 	}
